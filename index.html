@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,18 +27,76 @@
         header {
             background: linear-gradient(135deg, #2e7d32, #4caf50);
             color: white;
-            padding: 2rem 0;
+            padding: 1.5rem 0;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .logo-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding: 1rem 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .logo-bar img {
+            height: 70px;
+            object-fit: contain;
+        }
+
+        .logo-center {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .logo-left, .logo-right {
+            flex: 1;
+            display: flex;
+        }
+
+        .logo-left {
+            justify-content: flex-start;
+        }
+
+        .logo-right {
+            justify-content: flex-end;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .header-image {
+            width: 100%;
+            max-height: 350px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            border: 3px solid white;
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        header h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: #e8f5e9;
         }
 
         header p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             max-width: 800px;
             margin: 0 auto;
         }
@@ -66,6 +124,7 @@
             padding: 1rem 1.5rem;
             display: block;
             transition: background-color 0.3s;
+            font-weight: 500;
         }
 
         nav a:hover {
@@ -80,15 +139,16 @@
             text-align: center;
             margin-bottom: 3rem;
             color: #2e7d32;
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         .intro {
             background-color: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             margin-bottom: 2rem;
+            border-left: 5px solid #4caf50;
         }
 
         .timeline {
@@ -125,11 +185,12 @@
 
         .timeline-content {
             background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             width: 45%;
             position: relative;
+            border-top: 4px solid #4caf50;
         }
 
         .timeline-content::after {
@@ -153,20 +214,27 @@
         .criteria-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
         }
 
         .criterion {
             background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
+            transition: transform 0.3s;
+            border-top: 4px solid #4caf50;
+        }
+
+        .criterion:hover {
+            transform: translateY(-5px);
         }
 
         .criterion h3 {
             color: #2e7d32;
             margin-bottom: 1rem;
+            font-size: 1.3rem;
         }
 
         .team-grid {
@@ -177,9 +245,9 @@
 
         .team-member {
             background-color: white;
-            border-radius: 8px;
-            padding: 1.5rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             text-align: center;
             transition: transform 0.3s;
         }
@@ -201,6 +269,7 @@
             font-weight: bold;
             margin-bottom: 0.5rem;
             color: #2e7d32;
+            font-size: 1.2rem;
         }
 
         .member-role {
@@ -222,9 +291,9 @@
             transform: translateX(-50%);
             background-color: #ff9800;
             color: white;
-            padding: 5px 10px;
+            padding: 5px 15px;
             border-radius: 20px;
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             font-weight: bold;
         }
 
@@ -232,18 +301,21 @@
             display: inline-block;
             background-color: #4caf50;
             color: white;
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
+            padding: 1rem 2rem;
+            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: all 0.3s;
             border: none;
             cursor: pointer;
             margin: 0.5rem;
+            font-size: 1.1rem;
         }
 
         .btn:hover {
             background-color: #2e7d32;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
         }
 
         .btn-pdf {
@@ -264,7 +336,8 @@
         .registration {
             text-align: center;
             background-color: #e8f5e9;
-            padding: 3rem 0;
+            padding: 4rem 0;
+            border-radius: 10px;
         }
 
         footer {
@@ -275,6 +348,16 @@
         }
 
         @media (max-width: 768px) {
+            .logo-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+                padding: 1.5rem;
+            }
+            
+            .logo-left, .logo-center, .logo-right {
+                justify-content: center;
+            }
+            
             .timeline::before {
                 left: 20px;
             }
@@ -311,16 +394,40 @@
                 max-width: 300px;
                 margin: 0.5rem 0;
             }
+
+            header h1 {
+                font-size: 2.2rem;
+            }
+
+            header h2 {
+                font-size: 1.6rem;
+            }
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>HACKATHON ENSTAB 2025</h1>
-            <h2>Green AI</h2>
-            <p>20-21 December 2025</p>
-           
+            <!-- Logo Bar avec fond blanc -->
+            <div class="logo-bar">
+                <div class="logo-left">
+                    <img src="Enstab-logo-3.png" alt="ENSTAB Logo">
+                </div>
+                <div class="logo-center">
+                    <img src="Universite-de-Carthage.gif" alt="Université de Carthage Logo">
+                </div>
+                <div class="logo-right">
+                    <img src="paq logo.png" alt="PAQ DGSE Logo">
+                </div>
+            </div>
+
+            <div class="header-content">
+                <h1>HACKATHON ENSTAB 2025</h1>
+                <h2>Green AI</h2>
+                <p>20-21 December 2025</p>
+                
+               
+            </div>
         </div>
     </header>
 
@@ -344,13 +451,10 @@
             
             <h3 class="section-title" style="font-size: 1.5rem;">Target Audience</h3>
             <div class="intro">
-                <p>The hackathon is open exclusively to students from the University of Carthage who are passionate about artificial intelligence and innovation:
-:</p>
+                <p>The hackathon is open exclusively to students from the University of Carthage who are passionate about artificial intelligence and innovation:</p>
                 <ul style="margin-left: 2rem; margin-top: 1rem;">
-                    <li><strong>Students</strong>: from all disciplines within the University of Carthage, looking to develop their skills and apply their knowledge.
-</li>
+                    <li><strong>Students</strong>: from all disciplines within the University of Carthage, looking to develop their skills and apply their knowledge.</li>
                     <li><strong>Researchers</strong>: affiliated with the University of Carthage and leading applied or exploratory projects related to artificial intelligence, particularly in the field of Green AI.</li>
-                   
                 </ul>
                 <p style="margin-top: 1rem;"><strong>Participants may register in teams of 2 to 4 members.</strong></p>
             </div>
@@ -520,23 +624,4 @@
         </div>
     </footer>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
