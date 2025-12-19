@@ -395,6 +395,59 @@
         }
   
 
+  .team-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* espace vertical entre les lignes */
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* Conteneur ligne : élément flex en ligne */
+  .team-row {
+    display: flex;           /* essentiel pour aligner en ligne */
+    justify-content: center; /* centre les membres horizontalement */
+    gap: 20px;               /* espace entre membres */
+    flex-wrap: nowrap;       /* empêche le passage à la ligne */
+  }
+
+  /* Chaque membre */
+  .team-member {
+    flex: 0 0 auto;      /* ne rétrécit pas, largeur automatique */
+    max-width: 150px;
+    text-align: center;
+  }
+
+  .member-photo {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 150px;
+    display: block;
+  }
+
+  .member-name {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 1.1em;
+  }
+
+  .member-role {
+    font-size: 0.9em;
+    color: #555;
+  }
+
+  /* Responsive - passage en colonne sur petit écran */
+  @media (max-width: 600px) {
+    .team-row {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+    .team-member {
+      max-width: 80%;
+    }
+  }
 </style>
 
 </head>
@@ -703,6 +756,7 @@
     </footer>
 </body>
 </html>
+
 
 
 
