@@ -5,6 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACKATHON ENSTAB 2025 - Green AI</title>
     <style>
+        /* Conteneur global du comité */
+.team-committee {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* espace vertical entre les lignes */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Chaque ligne */
+.team-row {
+  display: flex;
+  justify-content: center; /* centre horizontalement les membres */
+  gap: 20px; /* espace entre membres */
+  flex-wrap: nowrap; /* empêche le passage à la ligne */
+}
+
+/* Chaque membre */
+.team-row .team-member {
+  flex: 0 0 auto; /* largeur automatique, ne s'étire pas */
+  max-width: 180px; /* ou 150px selon la taille des images */
+  text-align: center;
+}
+
+/* Photos */
+.team-member .member-photo {
+  width: 100%;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #4caf50;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 768px) {
+  .team-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  .team-row .team-member {
+    max-width: 80%;
+  }
+}
+
         * {
             margin: 0;
             padding: 0;
